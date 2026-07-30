@@ -1,5 +1,5 @@
-// PoliceReady v0.6 department data
-// Only public official-source summaries belong here. Missing facts stay clearly unavailable.
+// PoliceReady v0.7 department data
+// Compensation is displayed only when supported by official city or agency sources.
 const DEPARTMENTS = [
   {
     "id": 1,
@@ -14,7 +14,7 @@ const DEPARTMENTS = [
     "summary": "PoliceReady summarizes the test type and eligibility information from official City of Plano pages. Exact course rules and passing requirements must be checked on the linked official fitness page.",
     "minimumAge": "21+ (official eligibility page)",
     "education": "Multiple qualifying paths; confirm on official eligibility page",
-    "salary": "See official source",
+    "salary": "$86,423 recruit starting salary; $114,592 top salary",
     "benefits": "See official source",
     "hiringProcess": "Written and physical testing followed by agency hiring steps",
     "fitness": "Two-part physical agility test; official requirements page and video",
@@ -51,6 +51,21 @@ const DEPARTMENTS = [
     "privacy": {
       "collectsOfficialApplicationData": false,
       "externalApplicationOnly": true
+    },
+    "compensation": {
+      "recruitSalary": "$86,423",
+      "startingSalary": "$86,423",
+      "year1": "$86,423",
+      "year2": "$103,108",
+      "year3": "$110,985",
+      "year4": "$110,985 (no separate Year 4 step published)",
+      "year5": "$114,592",
+      "fiveYearTotal": "$526,093",
+      "topSalary": "$114,592",
+      "raiseSchedule": "Official page publishes steps after 1, 2, 3, and 5 years",
+      "sourceUrl": "https://www.plano.gov/police-employment",
+      "verifiedDate": "2026-07-30",
+      "verificationStatus": "verified"
     }
   },
   {
@@ -103,6 +118,21 @@ const DEPARTMENTS = [
     "privacy": {
       "collectsOfficialApplicationData": false,
       "externalApplicationOnly": true
+    },
+    "compensation": {
+      "recruitSalary": "Not publicly listed by the agency",
+      "startingSalary": "Not publicly listed by the agency",
+      "year1": "Not publicly listed by the agency",
+      "year2": "Not publicly listed by the agency",
+      "year3": "Not publicly listed by the agency",
+      "year4": "Not publicly listed by the agency",
+      "year5": "Not publicly listed by the agency",
+      "fiveYearTotal": "Not publicly listed by the agency",
+      "topSalary": "Not publicly listed by the agency",
+      "raiseSchedule": "Not publicly listed by the agency",
+      "sourceUrl": "https://www.friscotexas.gov/290/Pay-Plans",
+      "verifiedDate": "2026-07-30",
+      "verificationStatus": "official-pay-plan-linked"
     }
   },
   {
@@ -141,6 +171,21 @@ const DEPARTMENTS = [
     "privacy": {
       "collectsOfficialApplicationData": false,
       "externalApplicationOnly": true
+    },
+    "compensation": {
+      "recruitSalary": "Not publicly listed by the agency",
+      "startingSalary": "Not publicly listed by the agency",
+      "year1": "Not publicly listed by the agency",
+      "year2": "Not publicly listed by the agency",
+      "year3": "Not publicly listed by the agency",
+      "year4": "Not publicly listed by the agency",
+      "year5": "Not publicly listed by the agency",
+      "fiveYearTotal": "Not publicly listed by the agency",
+      "topSalary": "Not publicly listed by the agency",
+      "raiseSchedule": "Not publicly listed by the agency",
+      "sourceUrl": "https://www.cityofallen.org/departments/human_resources/compensation.php",
+      "verifiedDate": "2026-07-30",
+      "verificationStatus": "official-pay-plan-linked"
     }
   },
   {
@@ -179,6 +224,21 @@ const DEPARTMENTS = [
     "privacy": {
       "collectsOfficialApplicationData": false,
       "externalApplicationOnly": true
+    },
+    "compensation": {
+      "recruitSalary": "Not publicly listed by the agency",
+      "startingSalary": "Not publicly listed by the agency",
+      "year1": "Not publicly listed by the agency",
+      "year2": "Not publicly listed by the agency",
+      "year3": "Not publicly listed by the agency",
+      "year4": "Not publicly listed by the agency",
+      "year5": "Not publicly listed by the agency",
+      "fiveYearTotal": "Not publicly listed by the agency",
+      "topSalary": "Not publicly listed by the agency",
+      "raiseSchedule": "Not publicly listed by the agency",
+      "sourceUrl": "https://www.mckinneytexas.org/359/Benefits",
+      "verifiedDate": "2026-07-30",
+      "verificationStatus": "official-pay-plan-linked"
     }
   },
   {
@@ -217,6 +277,21 @@ const DEPARTMENTS = [
     "privacy": {
       "collectsOfficialApplicationData": false,
       "externalApplicationOnly": true
+    },
+    "compensation": {
+      "recruitSalary": "Not publicly listed by the agency",
+      "startingSalary": "Not publicly listed by the agency",
+      "year1": "Not publicly listed by the agency",
+      "year2": "Not publicly listed by the agency",
+      "year3": "Not publicly listed by the agency",
+      "year4": "Not publicly listed by the agency",
+      "year5": "Not publicly listed by the agency",
+      "fiveYearTotal": "Not publicly listed by the agency",
+      "topSalary": "Not publicly listed by the agency",
+      "raiseSchedule": "Not publicly listed by the agency",
+      "sourceUrl": "https://www.cor.net/departments/police",
+      "verifiedDate": "",
+      "verificationStatus": "needs-review"
     }
   },
   {
@@ -255,6 +330,21 @@ const DEPARTMENTS = [
     "privacy": {
       "collectsOfficialApplicationData": false,
       "externalApplicationOnly": true
+    },
+    "compensation": {
+      "recruitSalary": "Not publicly listed by the agency",
+      "startingSalary": "Not publicly listed by the agency",
+      "year1": "Not publicly listed by the agency",
+      "year2": "Not publicly listed by the agency",
+      "year3": "Not publicly listed by the agency",
+      "year4": "Not publicly listed by the agency",
+      "year5": "Not publicly listed by the agency",
+      "fiveYearTotal": "Not publicly listed by the agency",
+      "topSalary": "Not publicly listed by the agency",
+      "raiseSchedule": "Not publicly listed by the agency",
+      "sourceUrl": "https://www.wylietexas.gov/departments/police_department/index.php",
+      "verifiedDate": "",
+      "verificationStatus": "needs-review"
     }
   },
   {
@@ -293,6 +383,21 @@ const DEPARTMENTS = [
     "privacy": {
       "collectsOfficialApplicationData": false,
       "externalApplicationOnly": true
+    },
+    "compensation": {
+      "recruitSalary": "Not publicly listed by the agency",
+      "startingSalary": "Not publicly listed by the agency",
+      "year1": "Not publicly listed by the agency",
+      "year2": "Not publicly listed by the agency",
+      "year3": "Not publicly listed by the agency",
+      "year4": "Not publicly listed by the agency",
+      "year5": "Not publicly listed by the agency",
+      "fiveYearTotal": "Not publicly listed by the agency",
+      "topSalary": "Not publicly listed by the agency",
+      "raiseSchedule": "Not publicly listed by the agency",
+      "sourceUrl": "https://www.murphytx.org/115/Police",
+      "verifiedDate": "",
+      "verificationStatus": "needs-review"
     }
   },
   {
@@ -331,6 +436,21 @@ const DEPARTMENTS = [
     "privacy": {
       "collectsOfficialApplicationData": false,
       "externalApplicationOnly": true
+    },
+    "compensation": {
+      "recruitSalary": "Not publicly listed by the agency",
+      "startingSalary": "Not publicly listed by the agency",
+      "year1": "Not publicly listed by the agency",
+      "year2": "Not publicly listed by the agency",
+      "year3": "Not publicly listed by the agency",
+      "year4": "Not publicly listed by the agency",
+      "year5": "Not publicly listed by the agency",
+      "fiveYearTotal": "Not publicly listed by the agency",
+      "topSalary": "Not publicly listed by the agency",
+      "raiseSchedule": "Not publicly listed by the agency",
+      "sourceUrl": "https://www.prospertx.gov/department/police/",
+      "verifiedDate": "",
+      "verificationStatus": "needs-review"
     }
   },
   {
@@ -369,6 +489,21 @@ const DEPARTMENTS = [
     "privacy": {
       "collectsOfficialApplicationData": false,
       "externalApplicationOnly": true
+    },
+    "compensation": {
+      "recruitSalary": "Not publicly listed by the agency",
+      "startingSalary": "Not publicly listed by the agency",
+      "year1": "Not publicly listed by the agency",
+      "year2": "Not publicly listed by the agency",
+      "year3": "Not publicly listed by the agency",
+      "year4": "Not publicly listed by the agency",
+      "year5": "Not publicly listed by the agency",
+      "fiveYearTotal": "Not publicly listed by the agency",
+      "topSalary": "Not publicly listed by the agency",
+      "raiseSchedule": "Not publicly listed by the agency",
+      "sourceUrl": "https://www.celina-tx.gov/888/Police-Department",
+      "verifiedDate": "",
+      "verificationStatus": "needs-review"
     }
   },
   {
@@ -407,6 +542,21 @@ const DEPARTMENTS = [
     "privacy": {
       "collectsOfficialApplicationData": false,
       "externalApplicationOnly": true
+    },
+    "compensation": {
+      "recruitSalary": "Not publicly listed by the agency",
+      "startingSalary": "Not publicly listed by the agency",
+      "year1": "Not publicly listed by the agency",
+      "year2": "Not publicly listed by the agency",
+      "year3": "Not publicly listed by the agency",
+      "year4": "Not publicly listed by the agency",
+      "year5": "Not publicly listed by the agency",
+      "fiveYearTotal": "Not publicly listed by the agency",
+      "topSalary": "Not publicly listed by the agency",
+      "raiseSchedule": "Not publicly listed by the agency",
+      "sourceUrl": "https://princetontx.gov/214/Police",
+      "verifiedDate": "",
+      "verificationStatus": "needs-review"
     }
   },
   {
@@ -445,6 +595,21 @@ const DEPARTMENTS = [
     "privacy": {
       "collectsOfficialApplicationData": false,
       "externalApplicationOnly": true
+    },
+    "compensation": {
+      "recruitSalary": "Not publicly listed by the agency",
+      "startingSalary": "Not publicly listed by the agency",
+      "year1": "Not publicly listed by the agency",
+      "year2": "Not publicly listed by the agency",
+      "year3": "Not publicly listed by the agency",
+      "year4": "Not publicly listed by the agency",
+      "year5": "Not publicly listed by the agency",
+      "fiveYearTotal": "Not publicly listed by the agency",
+      "topSalary": "Not publicly listed by the agency",
+      "raiseSchedule": "Not publicly listed by the agency",
+      "sourceUrl": "https://www.annatexas.gov/117/Police",
+      "verifiedDate": "",
+      "verificationStatus": "needs-review"
     }
   },
   {
@@ -483,6 +648,21 @@ const DEPARTMENTS = [
     "privacy": {
       "collectsOfficialApplicationData": false,
       "externalApplicationOnly": true
+    },
+    "compensation": {
+      "recruitSalary": "Not publicly listed by the agency",
+      "startingSalary": "Not publicly listed by the agency",
+      "year1": "Not publicly listed by the agency",
+      "year2": "Not publicly listed by the agency",
+      "year3": "Not publicly listed by the agency",
+      "year4": "Not publicly listed by the agency",
+      "year5": "Not publicly listed by the agency",
+      "fiveYearTotal": "Not publicly listed by the agency",
+      "topSalary": "Not publicly listed by the agency",
+      "raiseSchedule": "Not publicly listed by the agency",
+      "sourceUrl": "https://www.cityofmelissa.com/190/Police-Department",
+      "verifiedDate": "",
+      "verificationStatus": "needs-review"
     }
   },
   {
@@ -521,6 +701,21 @@ const DEPARTMENTS = [
     "privacy": {
       "collectsOfficialApplicationData": false,
       "externalApplicationOnly": true
+    },
+    "compensation": {
+      "recruitSalary": "Not publicly listed by the agency",
+      "startingSalary": "Not publicly listed by the agency",
+      "year1": "Not publicly listed by the agency",
+      "year2": "Not publicly listed by the agency",
+      "year3": "Not publicly listed by the agency",
+      "year4": "Not publicly listed by the agency",
+      "year5": "Not publicly listed by the agency",
+      "fiveYearTotal": "Not publicly listed by the agency",
+      "topSalary": "Not publicly listed by the agency",
+      "raiseSchedule": "Not publicly listed by the agency",
+      "sourceUrl": "https://dallascityhall.com/departments/police/Pages/default.aspx",
+      "verifiedDate": "",
+      "verificationStatus": "needs-review"
     }
   },
   {
@@ -559,6 +754,21 @@ const DEPARTMENTS = [
     "privacy": {
       "collectsOfficialApplicationData": false,
       "externalApplicationOnly": true
+    },
+    "compensation": {
+      "recruitSalary": "Not publicly listed by the agency",
+      "startingSalary": "Not publicly listed by the agency",
+      "year1": "Not publicly listed by the agency",
+      "year2": "Not publicly listed by the agency",
+      "year3": "Not publicly listed by the agency",
+      "year4": "Not publicly listed by the agency",
+      "year5": "Not publicly listed by the agency",
+      "fiveYearTotal": "Not publicly listed by the agency",
+      "topSalary": "Not publicly listed by the agency",
+      "raiseSchedule": "Not publicly listed by the agency",
+      "sourceUrl": "https://www.garlandtx.gov/192/Police",
+      "verifiedDate": "",
+      "verificationStatus": "needs-review"
     }
   },
   {
@@ -597,6 +807,21 @@ const DEPARTMENTS = [
     "privacy": {
       "collectsOfficialApplicationData": false,
       "externalApplicationOnly": true
+    },
+    "compensation": {
+      "recruitSalary": "Not publicly listed by the agency",
+      "startingSalary": "Not publicly listed by the agency",
+      "year1": "Not publicly listed by the agency",
+      "year2": "Not publicly listed by the agency",
+      "year3": "Not publicly listed by the agency",
+      "year4": "Not publicly listed by the agency",
+      "year5": "Not publicly listed by the agency",
+      "fiveYearTotal": "Not publicly listed by the agency",
+      "topSalary": "Not publicly listed by the agency",
+      "raiseSchedule": "Not publicly listed by the agency",
+      "sourceUrl": "https://www.cityofirving.org/940/Police",
+      "verifiedDate": "",
+      "verificationStatus": "needs-review"
     }
   },
   {
@@ -635,6 +860,21 @@ const DEPARTMENTS = [
     "privacy": {
       "collectsOfficialApplicationData": false,
       "externalApplicationOnly": true
+    },
+    "compensation": {
+      "recruitSalary": "Not publicly listed by the agency",
+      "startingSalary": "Not publicly listed by the agency",
+      "year1": "Not publicly listed by the agency",
+      "year2": "Not publicly listed by the agency",
+      "year3": "Not publicly listed by the agency",
+      "year4": "Not publicly listed by the agency",
+      "year5": "Not publicly listed by the agency",
+      "fiveYearTotal": "Not publicly listed by the agency",
+      "topSalary": "Not publicly listed by the agency",
+      "raiseSchedule": "Not publicly listed by the agency",
+      "sourceUrl": "https://www.cityofmesquite.com/454/Police",
+      "verifiedDate": "",
+      "verificationStatus": "needs-review"
     }
   },
   {
@@ -673,6 +913,21 @@ const DEPARTMENTS = [
     "privacy": {
       "collectsOfficialApplicationData": false,
       "externalApplicationOnly": true
+    },
+    "compensation": {
+      "recruitSalary": "Not publicly listed by the agency",
+      "startingSalary": "Not publicly listed by the agency",
+      "year1": "Not publicly listed by the agency",
+      "year2": "Not publicly listed by the agency",
+      "year3": "Not publicly listed by the agency",
+      "year4": "Not publicly listed by the agency",
+      "year5": "Not publicly listed by the agency",
+      "fiveYearTotal": "Not publicly listed by the agency",
+      "topSalary": "Not publicly listed by the agency",
+      "raiseSchedule": "Not publicly listed by the agency",
+      "sourceUrl": "https://www.cityofcarrollton.com/departments/departments-g-p/police",
+      "verifiedDate": "",
+      "verificationStatus": "needs-review"
     }
   },
   {
@@ -711,6 +966,21 @@ const DEPARTMENTS = [
     "privacy": {
       "collectsOfficialApplicationData": false,
       "externalApplicationOnly": true
+    },
+    "compensation": {
+      "recruitSalary": "Not publicly listed by the agency",
+      "startingSalary": "Not publicly listed by the agency",
+      "year1": "Not publicly listed by the agency",
+      "year2": "Not publicly listed by the agency",
+      "year3": "Not publicly listed by the agency",
+      "year4": "Not publicly listed by the agency",
+      "year5": "Not publicly listed by the agency",
+      "fiveYearTotal": "Not publicly listed by the agency",
+      "topSalary": "Not publicly listed by the agency",
+      "raiseSchedule": "Not publicly listed by the agency",
+      "sourceUrl": "https://www.farmersbranchtx.gov/158/Police",
+      "verifiedDate": "",
+      "verificationStatus": "needs-review"
     }
   },
   {
@@ -749,6 +1019,21 @@ const DEPARTMENTS = [
     "privacy": {
       "collectsOfficialApplicationData": false,
       "externalApplicationOnly": true
+    },
+    "compensation": {
+      "recruitSalary": "Not publicly listed by the agency",
+      "startingSalary": "Not publicly listed by the agency",
+      "year1": "Not publicly listed by the agency",
+      "year2": "Not publicly listed by the agency",
+      "year3": "Not publicly listed by the agency",
+      "year4": "Not publicly listed by the agency",
+      "year5": "Not publicly listed by the agency",
+      "fiveYearTotal": "Not publicly listed by the agency",
+      "topSalary": "Not publicly listed by the agency",
+      "raiseSchedule": "Not publicly listed by the agency",
+      "sourceUrl": "https://www.coppelltx.gov/402/Police",
+      "verifiedDate": "",
+      "verificationStatus": "needs-review"
     }
   },
   {
@@ -787,6 +1072,21 @@ const DEPARTMENTS = [
     "privacy": {
       "collectsOfficialApplicationData": false,
       "externalApplicationOnly": true
+    },
+    "compensation": {
+      "recruitSalary": "Not publicly listed by the agency",
+      "startingSalary": "Not publicly listed by the agency",
+      "year1": "Not publicly listed by the agency",
+      "year2": "Not publicly listed by the agency",
+      "year3": "Not publicly listed by the agency",
+      "year4": "Not publicly listed by the agency",
+      "year5": "Not publicly listed by the agency",
+      "fiveYearTotal": "Not publicly listed by the agency",
+      "topSalary": "Not publicly listed by the agency",
+      "raiseSchedule": "Not publicly listed by the agency",
+      "sourceUrl": "https://www.rowletttx.gov/199/Police",
+      "verifiedDate": "",
+      "verificationStatus": "needs-review"
     }
   },
   {
@@ -825,6 +1125,21 @@ const DEPARTMENTS = [
     "privacy": {
       "collectsOfficialApplicationData": false,
       "externalApplicationOnly": true
+    },
+    "compensation": {
+      "recruitSalary": "Not publicly listed by the agency",
+      "startingSalary": "Not publicly listed by the agency",
+      "year1": "Not publicly listed by the agency",
+      "year2": "Not publicly listed by the agency",
+      "year3": "Not publicly listed by the agency",
+      "year4": "Not publicly listed by the agency",
+      "year5": "Not publicly listed by the agency",
+      "fiveYearTotal": "Not publicly listed by the agency",
+      "topSalary": "Not publicly listed by the agency",
+      "raiseSchedule": "Not publicly listed by the agency",
+      "sourceUrl": "https://www.ci.desoto.tx.us/151/Police",
+      "verifiedDate": "",
+      "verificationStatus": "needs-review"
     }
   },
   {
@@ -863,6 +1178,21 @@ const DEPARTMENTS = [
     "privacy": {
       "collectsOfficialApplicationData": false,
       "externalApplicationOnly": true
+    },
+    "compensation": {
+      "recruitSalary": "Not publicly listed by the agency",
+      "startingSalary": "Not publicly listed by the agency",
+      "year1": "Not publicly listed by the agency",
+      "year2": "Not publicly listed by the agency",
+      "year3": "Not publicly listed by the agency",
+      "year4": "Not publicly listed by the agency",
+      "year5": "Not publicly listed by the agency",
+      "fiveYearTotal": "Not publicly listed by the agency",
+      "topSalary": "Not publicly listed by the agency",
+      "raiseSchedule": "Not publicly listed by the agency",
+      "sourceUrl": "https://www.duncanvilletx.gov/departments/police/",
+      "verifiedDate": "",
+      "verificationStatus": "needs-review"
     }
   },
   {
@@ -901,6 +1231,21 @@ const DEPARTMENTS = [
     "privacy": {
       "collectsOfficialApplicationData": false,
       "externalApplicationOnly": true
+    },
+    "compensation": {
+      "recruitSalary": "Not publicly listed by the agency",
+      "startingSalary": "Not publicly listed by the agency",
+      "year1": "Not publicly listed by the agency",
+      "year2": "Not publicly listed by the agency",
+      "year3": "Not publicly listed by the agency",
+      "year4": "Not publicly listed by the agency",
+      "year5": "Not publicly listed by the agency",
+      "fiveYearTotal": "Not publicly listed by the agency",
+      "topSalary": "Not publicly listed by the agency",
+      "raiseSchedule": "Not publicly listed by the agency",
+      "sourceUrl": "https://www.cedarhilltx.com/196/Police",
+      "verifiedDate": "",
+      "verificationStatus": "needs-review"
     }
   },
   {
@@ -939,6 +1284,21 @@ const DEPARTMENTS = [
     "privacy": {
       "collectsOfficialApplicationData": false,
       "externalApplicationOnly": true
+    },
+    "compensation": {
+      "recruitSalary": "Not publicly listed by the agency",
+      "startingSalary": "Not publicly listed by the agency",
+      "year1": "Not publicly listed by the agency",
+      "year2": "Not publicly listed by the agency",
+      "year3": "Not publicly listed by the agency",
+      "year4": "Not publicly listed by the agency",
+      "year5": "Not publicly listed by the agency",
+      "fiveYearTotal": "Not publicly listed by the agency",
+      "topSalary": "Not publicly listed by the agency",
+      "raiseSchedule": "Not publicly listed by the agency",
+      "sourceUrl": "https://www.lancaster-tx.com/155/Police",
+      "verifiedDate": "",
+      "verificationStatus": "needs-review"
     }
   },
   {
@@ -977,6 +1337,21 @@ const DEPARTMENTS = [
     "privacy": {
       "collectsOfficialApplicationData": false,
       "externalApplicationOnly": true
+    },
+    "compensation": {
+      "recruitSalary": "Not publicly listed by the agency",
+      "startingSalary": "Not publicly listed by the agency",
+      "year1": "Not publicly listed by the agency",
+      "year2": "Not publicly listed by the agency",
+      "year3": "Not publicly listed by the agency",
+      "year4": "Not publicly listed by the agency",
+      "year5": "Not publicly listed by the agency",
+      "fiveYearTotal": "Not publicly listed by the agency",
+      "topSalary": "Not publicly listed by the agency",
+      "raiseSchedule": "Not publicly listed by the agency",
+      "sourceUrl": "https://www.gptx.org/Departments/Police-Department",
+      "verifiedDate": "",
+      "verificationStatus": "needs-review"
     }
   },
   {
@@ -1015,6 +1390,21 @@ const DEPARTMENTS = [
     "privacy": {
       "collectsOfficialApplicationData": false,
       "externalApplicationOnly": true
+    },
+    "compensation": {
+      "recruitSalary": "Not publicly listed by the agency",
+      "startingSalary": "Not publicly listed by the agency",
+      "year1": "Not publicly listed by the agency",
+      "year2": "Not publicly listed by the agency",
+      "year3": "Not publicly listed by the agency",
+      "year4": "Not publicly listed by the agency",
+      "year5": "Not publicly listed by the agency",
+      "fiveYearTotal": "Not publicly listed by the agency",
+      "topSalary": "Not publicly listed by the agency",
+      "raiseSchedule": "Not publicly listed by the agency",
+      "sourceUrl": "https://addisontexas.net/police",
+      "verifiedDate": "",
+      "verificationStatus": "needs-review"
     }
   },
   {
@@ -1053,6 +1443,21 @@ const DEPARTMENTS = [
     "privacy": {
       "collectsOfficialApplicationData": false,
       "externalApplicationOnly": true
+    },
+    "compensation": {
+      "recruitSalary": "Not publicly listed by the agency",
+      "startingSalary": "Not publicly listed by the agency",
+      "year1": "Not publicly listed by the agency",
+      "year2": "Not publicly listed by the agency",
+      "year3": "Not publicly listed by the agency",
+      "year4": "Not publicly listed by the agency",
+      "year5": "Not publicly listed by the agency",
+      "fiveYearTotal": "Not publicly listed by the agency",
+      "topSalary": "Not publicly listed by the agency",
+      "raiseSchedule": "Not publicly listed by the agency",
+      "sourceUrl": "https://www.uptexas.org/312/Police",
+      "verifiedDate": "",
+      "verificationStatus": "needs-review"
     }
   },
   {
@@ -1091,6 +1496,21 @@ const DEPARTMENTS = [
     "privacy": {
       "collectsOfficialApplicationData": false,
       "externalApplicationOnly": true
+    },
+    "compensation": {
+      "recruitSalary": "Not publicly listed by the agency",
+      "startingSalary": "Not publicly listed by the agency",
+      "year1": "Not publicly listed by the agency",
+      "year2": "Not publicly listed by the agency",
+      "year3": "Not publicly listed by the agency",
+      "year4": "Not publicly listed by the agency",
+      "year5": "Not publicly listed by the agency",
+      "fiveYearTotal": "Not publicly listed by the agency",
+      "topSalary": "Not publicly listed by the agency",
+      "raiseSchedule": "Not publicly listed by the agency",
+      "sourceUrl": "https://www.hptx.org/189/Public-Safety",
+      "verifiedDate": "",
+      "verificationStatus": "needs-review"
     }
   },
   {
@@ -1129,6 +1549,21 @@ const DEPARTMENTS = [
     "privacy": {
       "collectsOfficialApplicationData": false,
       "externalApplicationOnly": true
+    },
+    "compensation": {
+      "recruitSalary": "Not publicly listed by the agency",
+      "startingSalary": "Not publicly listed by the agency",
+      "year1": "Not publicly listed by the agency",
+      "year2": "Not publicly listed by the agency",
+      "year3": "Not publicly listed by the agency",
+      "year4": "Not publicly listed by the agency",
+      "year5": "Not publicly listed by the agency",
+      "fiveYearTotal": "Not publicly listed by the agency",
+      "topSalary": "Not publicly listed by the agency",
+      "raiseSchedule": "Not publicly listed by the agency",
+      "sourceUrl": "https://www.cityofbalchsprings.com/148/Police-Department",
+      "verifiedDate": "",
+      "verificationStatus": "needs-review"
     }
   },
   {
@@ -1167,6 +1602,21 @@ const DEPARTMENTS = [
     "privacy": {
       "collectsOfficialApplicationData": false,
       "externalApplicationOnly": true
+    },
+    "compensation": {
+      "recruitSalary": "Not publicly listed by the agency",
+      "startingSalary": "Not publicly listed by the agency",
+      "year1": "Not publicly listed by the agency",
+      "year2": "Not publicly listed by the agency",
+      "year3": "Not publicly listed by the agency",
+      "year4": "Not publicly listed by the agency",
+      "year5": "Not publicly listed by the agency",
+      "fiveYearTotal": "Not publicly listed by the agency",
+      "topSalary": "Not publicly listed by the agency",
+      "raiseSchedule": "Not publicly listed by the agency",
+      "sourceUrl": "https://www.cityofsachse.com/168/Police",
+      "verifiedDate": "",
+      "verificationStatus": "needs-review"
     }
   },
   {
@@ -1205,6 +1655,21 @@ const DEPARTMENTS = [
     "privacy": {
       "collectsOfficialApplicationData": false,
       "externalApplicationOnly": true
+    },
+    "compensation": {
+      "recruitSalary": "Not publicly listed by the agency",
+      "startingSalary": "Not publicly listed by the agency",
+      "year1": "Not publicly listed by the agency",
+      "year2": "Not publicly listed by the agency",
+      "year3": "Not publicly listed by the agency",
+      "year4": "Not publicly listed by the agency",
+      "year5": "Not publicly listed by the agency",
+      "fiveYearTotal": "Not publicly listed by the agency",
+      "topSalary": "Not publicly listed by the agency",
+      "raiseSchedule": "Not publicly listed by the agency",
+      "sourceUrl": "https://www.fortworthtexas.gov/departments/police",
+      "verifiedDate": "",
+      "verificationStatus": "needs-review"
     }
   },
   {
@@ -1243,6 +1708,21 @@ const DEPARTMENTS = [
     "privacy": {
       "collectsOfficialApplicationData": false,
       "externalApplicationOnly": true
+    },
+    "compensation": {
+      "recruitSalary": "Not publicly listed by the agency",
+      "startingSalary": "Not publicly listed by the agency",
+      "year1": "Not publicly listed by the agency",
+      "year2": "Not publicly listed by the agency",
+      "year3": "Not publicly listed by the agency",
+      "year4": "Not publicly listed by the agency",
+      "year5": "Not publicly listed by the agency",
+      "fiveYearTotal": "Not publicly listed by the agency",
+      "topSalary": "Not publicly listed by the agency",
+      "raiseSchedule": "Not publicly listed by the agency",
+      "sourceUrl": "https://www.arlingtontx.gov/city_hall/departments/police",
+      "verifiedDate": "",
+      "verificationStatus": "needs-review"
     }
   },
   {
@@ -1281,6 +1761,21 @@ const DEPARTMENTS = [
     "privacy": {
       "collectsOfficialApplicationData": false,
       "externalApplicationOnly": true
+    },
+    "compensation": {
+      "recruitSalary": "Not publicly listed by the agency",
+      "startingSalary": "Not publicly listed by the agency",
+      "year1": "Not publicly listed by the agency",
+      "year2": "Not publicly listed by the agency",
+      "year3": "Not publicly listed by the agency",
+      "year4": "Not publicly listed by the agency",
+      "year5": "Not publicly listed by the agency",
+      "fiveYearTotal": "Not publicly listed by the agency",
+      "topSalary": "Not publicly listed by the agency",
+      "raiseSchedule": "Not publicly listed by the agency",
+      "sourceUrl": "https://www.grapevinetexas.gov/450/Police",
+      "verifiedDate": "",
+      "verificationStatus": "needs-review"
     }
   },
   {
@@ -1319,6 +1814,21 @@ const DEPARTMENTS = [
     "privacy": {
       "collectsOfficialApplicationData": false,
       "externalApplicationOnly": true
+    },
+    "compensation": {
+      "recruitSalary": "Not publicly listed by the agency",
+      "startingSalary": "Not publicly listed by the agency",
+      "year1": "Not publicly listed by the agency",
+      "year2": "Not publicly listed by the agency",
+      "year3": "Not publicly listed by the agency",
+      "year4": "Not publicly listed by the agency",
+      "year5": "Not publicly listed by the agency",
+      "fiveYearTotal": "Not publicly listed by the agency",
+      "topSalary": "Not publicly listed by the agency",
+      "raiseSchedule": "Not publicly listed by the agency",
+      "sourceUrl": "https://www.cityofsouthlake.com/169/Police",
+      "verifiedDate": "",
+      "verificationStatus": "needs-review"
     }
   },
   {
@@ -1357,6 +1867,21 @@ const DEPARTMENTS = [
     "privacy": {
       "collectsOfficialApplicationData": false,
       "externalApplicationOnly": true
+    },
+    "compensation": {
+      "recruitSalary": "Not publicly listed by the agency",
+      "startingSalary": "Not publicly listed by the agency",
+      "year1": "Not publicly listed by the agency",
+      "year2": "Not publicly listed by the agency",
+      "year3": "Not publicly listed by the agency",
+      "year4": "Not publicly listed by the agency",
+      "year5": "Not publicly listed by the agency",
+      "fiveYearTotal": "Not publicly listed by the agency",
+      "topSalary": "Not publicly listed by the agency",
+      "raiseSchedule": "Not publicly listed by the agency",
+      "sourceUrl": "https://www.eulesstx.gov/departments/police",
+      "verifiedDate": "",
+      "verificationStatus": "needs-review"
     }
   },
   {
@@ -1395,6 +1920,21 @@ const DEPARTMENTS = [
     "privacy": {
       "collectsOfficialApplicationData": false,
       "externalApplicationOnly": true
+    },
+    "compensation": {
+      "recruitSalary": "Not publicly listed by the agency",
+      "startingSalary": "Not publicly listed by the agency",
+      "year1": "Not publicly listed by the agency",
+      "year2": "Not publicly listed by the agency",
+      "year3": "Not publicly listed by the agency",
+      "year4": "Not publicly listed by the agency",
+      "year5": "Not publicly listed by the agency",
+      "fiveYearTotal": "Not publicly listed by the agency",
+      "topSalary": "Not publicly listed by the agency",
+      "raiseSchedule": "Not publicly listed by the agency",
+      "sourceUrl": "https://www.bedfordtx.gov/174/Police-Department",
+      "verifiedDate": "",
+      "verificationStatus": "needs-review"
     }
   },
   {
@@ -1433,6 +1973,21 @@ const DEPARTMENTS = [
     "privacy": {
       "collectsOfficialApplicationData": false,
       "externalApplicationOnly": true
+    },
+    "compensation": {
+      "recruitSalary": "Not publicly listed by the agency",
+      "startingSalary": "Not publicly listed by the agency",
+      "year1": "Not publicly listed by the agency",
+      "year2": "Not publicly listed by the agency",
+      "year3": "Not publicly listed by the agency",
+      "year4": "Not publicly listed by the agency",
+      "year5": "Not publicly listed by the agency",
+      "fiveYearTotal": "Not publicly listed by the agency",
+      "topSalary": "Not publicly listed by the agency",
+      "raiseSchedule": "Not publicly listed by the agency",
+      "sourceUrl": "https://www.hursttx.gov/about-us/departments/police-department",
+      "verifiedDate": "",
+      "verificationStatus": "needs-review"
     }
   },
   {
@@ -1471,6 +2026,21 @@ const DEPARTMENTS = [
     "privacy": {
       "collectsOfficialApplicationData": false,
       "externalApplicationOnly": true
+    },
+    "compensation": {
+      "recruitSalary": "Not publicly listed by the agency",
+      "startingSalary": "Not publicly listed by the agency",
+      "year1": "Not publicly listed by the agency",
+      "year2": "Not publicly listed by the agency",
+      "year3": "Not publicly listed by the agency",
+      "year4": "Not publicly listed by the agency",
+      "year5": "Not publicly listed by the agency",
+      "fiveYearTotal": "Not publicly listed by the agency",
+      "topSalary": "Not publicly listed by the agency",
+      "raiseSchedule": "Not publicly listed by the agency",
+      "sourceUrl": "https://www.nrhtx.com/270/Police",
+      "verifiedDate": "",
+      "verificationStatus": "needs-review"
     }
   },
   {
@@ -1509,6 +2079,21 @@ const DEPARTMENTS = [
     "privacy": {
       "collectsOfficialApplicationData": false,
       "externalApplicationOnly": true
+    },
+    "compensation": {
+      "recruitSalary": "Not publicly listed by the agency",
+      "startingSalary": "Not publicly listed by the agency",
+      "year1": "Not publicly listed by the agency",
+      "year2": "Not publicly listed by the agency",
+      "year3": "Not publicly listed by the agency",
+      "year4": "Not publicly listed by the agency",
+      "year5": "Not publicly listed by the agency",
+      "fiveYearTotal": "Not publicly listed by the agency",
+      "topSalary": "Not publicly listed by the agency",
+      "raiseSchedule": "Not publicly listed by the agency",
+      "sourceUrl": "https://www.cityofkeller.com/services/police",
+      "verifiedDate": "",
+      "verificationStatus": "needs-review"
     }
   },
   {
@@ -1547,6 +2132,21 @@ const DEPARTMENTS = [
     "privacy": {
       "collectsOfficialApplicationData": false,
       "externalApplicationOnly": true
+    },
+    "compensation": {
+      "recruitSalary": "Not publicly listed by the agency",
+      "startingSalary": "Not publicly listed by the agency",
+      "year1": "Not publicly listed by the agency",
+      "year2": "Not publicly listed by the agency",
+      "year3": "Not publicly listed by the agency",
+      "year4": "Not publicly listed by the agency",
+      "year5": "Not publicly listed by the agency",
+      "fiveYearTotal": "Not publicly listed by the agency",
+      "topSalary": "Not publicly listed by the agency",
+      "raiseSchedule": "Not publicly listed by the agency",
+      "sourceUrl": "https://www.mansfieldtexas.gov/168/Police",
+      "verifiedDate": "",
+      "verificationStatus": "needs-review"
     }
   },
   {
@@ -1585,6 +2185,21 @@ const DEPARTMENTS = [
     "privacy": {
       "collectsOfficialApplicationData": false,
       "externalApplicationOnly": true
+    },
+    "compensation": {
+      "recruitSalary": "Not publicly listed by the agency",
+      "startingSalary": "Not publicly listed by the agency",
+      "year1": "Not publicly listed by the agency",
+      "year2": "Not publicly listed by the agency",
+      "year3": "Not publicly listed by the agency",
+      "year4": "Not publicly listed by the agency",
+      "year5": "Not publicly listed by the agency",
+      "fiveYearTotal": "Not publicly listed by the agency",
+      "topSalary": "Not publicly listed by the agency",
+      "raiseSchedule": "Not publicly listed by the agency",
+      "sourceUrl": "https://www.burlesontx.com/70/Police",
+      "verifiedDate": "",
+      "verificationStatus": "needs-review"
     }
   },
   {
@@ -1623,6 +2238,21 @@ const DEPARTMENTS = [
     "privacy": {
       "collectsOfficialApplicationData": false,
       "externalApplicationOnly": true
+    },
+    "compensation": {
+      "recruitSalary": "Not publicly listed by the agency",
+      "startingSalary": "Not publicly listed by the agency",
+      "year1": "Not publicly listed by the agency",
+      "year2": "Not publicly listed by the agency",
+      "year3": "Not publicly listed by the agency",
+      "year4": "Not publicly listed by the agency",
+      "year5": "Not publicly listed by the agency",
+      "fiveYearTotal": "Not publicly listed by the agency",
+      "topSalary": "Not publicly listed by the agency",
+      "raiseSchedule": "Not publicly listed by the agency",
+      "sourceUrl": "https://www.colleyville.com/government/departments-a-l/police",
+      "verifiedDate": "",
+      "verificationStatus": "needs-review"
     }
   },
   {
@@ -1661,6 +2291,21 @@ const DEPARTMENTS = [
     "privacy": {
       "collectsOfficialApplicationData": false,
       "externalApplicationOnly": true
+    },
+    "compensation": {
+      "recruitSalary": "Not publicly listed by the agency",
+      "startingSalary": "Not publicly listed by the agency",
+      "year1": "Not publicly listed by the agency",
+      "year2": "Not publicly listed by the agency",
+      "year3": "Not publicly listed by the agency",
+      "year4": "Not publicly listed by the agency",
+      "year5": "Not publicly listed by the agency",
+      "fiveYearTotal": "Not publicly listed by the agency",
+      "topSalary": "Not publicly listed by the agency",
+      "raiseSchedule": "Not publicly listed by the agency",
+      "sourceUrl": "https://www.cowtx.org/141/Police",
+      "verifiedDate": "",
+      "verificationStatus": "needs-review"
     }
   },
   {
@@ -1699,6 +2344,21 @@ const DEPARTMENTS = [
     "privacy": {
       "collectsOfficialApplicationData": false,
       "externalApplicationOnly": true
+    },
+    "compensation": {
+      "recruitSalary": "Not publicly listed by the agency",
+      "startingSalary": "Not publicly listed by the agency",
+      "year1": "Not publicly listed by the agency",
+      "year2": "Not publicly listed by the agency",
+      "year3": "Not publicly listed by the agency",
+      "year4": "Not publicly listed by the agency",
+      "year5": "Not publicly listed by the agency",
+      "fiveYearTotal": "Not publicly listed by the agency",
+      "topSalary": "Not publicly listed by the agency",
+      "raiseSchedule": "Not publicly listed by the agency",
+      "sourceUrl": "https://www.wstx.us/166/Police",
+      "verifiedDate": "",
+      "verificationStatus": "needs-review"
     }
   },
   {
@@ -1737,6 +2397,21 @@ const DEPARTMENTS = [
     "privacy": {
       "collectsOfficialApplicationData": false,
       "externalApplicationOnly": true
+    },
+    "compensation": {
+      "recruitSalary": "Not publicly listed by the agency",
+      "startingSalary": "Not publicly listed by the agency",
+      "year1": "Not publicly listed by the agency",
+      "year2": "Not publicly listed by the agency",
+      "year3": "Not publicly listed by the agency",
+      "year4": "Not publicly listed by the agency",
+      "year5": "Not publicly listed by the agency",
+      "fiveYearTotal": "Not publicly listed by the agency",
+      "topSalary": "Not publicly listed by the agency",
+      "raiseSchedule": "Not publicly listed by the agency",
+      "sourceUrl": "https://www.benbrook-tx.gov/171/Police",
+      "verifiedDate": "",
+      "verificationStatus": "needs-review"
     }
   },
   {
@@ -1775,6 +2450,21 @@ const DEPARTMENTS = [
     "privacy": {
       "collectsOfficialApplicationData": false,
       "externalApplicationOnly": true
+    },
+    "compensation": {
+      "recruitSalary": "Not publicly listed by the agency",
+      "startingSalary": "Not publicly listed by the agency",
+      "year1": "Not publicly listed by the agency",
+      "year2": "Not publicly listed by the agency",
+      "year3": "Not publicly listed by the agency",
+      "year4": "Not publicly listed by the agency",
+      "year5": "Not publicly listed by the agency",
+      "fiveYearTotal": "Not publicly listed by the agency",
+      "topSalary": "Not publicly listed by the agency",
+      "raiseSchedule": "Not publicly listed by the agency",
+      "sourceUrl": "https://www.cityofdenton.com/351/Police",
+      "verifiedDate": "",
+      "verificationStatus": "needs-review"
     }
   },
   {
@@ -1813,6 +2503,21 @@ const DEPARTMENTS = [
     "privacy": {
       "collectsOfficialApplicationData": false,
       "externalApplicationOnly": true
+    },
+    "compensation": {
+      "recruitSalary": "Not publicly listed by the agency",
+      "startingSalary": "Not publicly listed by the agency",
+      "year1": "Not publicly listed by the agency",
+      "year2": "Not publicly listed by the agency",
+      "year3": "Not publicly listed by the agency",
+      "year4": "Not publicly listed by the agency",
+      "year5": "Not publicly listed by the agency",
+      "fiveYearTotal": "Not publicly listed by the agency",
+      "topSalary": "Not publicly listed by the agency",
+      "raiseSchedule": "Not publicly listed by the agency",
+      "sourceUrl": "https://www.cityoflewisville.com/about-us/city-departments/police-department",
+      "verifiedDate": "",
+      "verificationStatus": "needs-review"
     }
   },
   {
@@ -1851,6 +2556,21 @@ const DEPARTMENTS = [
     "privacy": {
       "collectsOfficialApplicationData": false,
       "externalApplicationOnly": true
+    },
+    "compensation": {
+      "recruitSalary": "Not publicly listed by the agency",
+      "startingSalary": "Not publicly listed by the agency",
+      "year1": "Not publicly listed by the agency",
+      "year2": "Not publicly listed by the agency",
+      "year3": "Not publicly listed by the agency",
+      "year4": "Not publicly listed by the agency",
+      "year5": "Not publicly listed by the agency",
+      "fiveYearTotal": "Not publicly listed by the agency",
+      "topSalary": "Not publicly listed by the agency",
+      "raiseSchedule": "Not publicly listed by the agency",
+      "sourceUrl": "https://www.flower-mound.com/139/Police-Department",
+      "verifiedDate": "",
+      "verificationStatus": "needs-review"
     }
   },
   {
@@ -1889,6 +2609,21 @@ const DEPARTMENTS = [
     "privacy": {
       "collectsOfficialApplicationData": false,
       "externalApplicationOnly": true
+    },
+    "compensation": {
+      "recruitSalary": "Not publicly listed by the agency",
+      "startingSalary": "Not publicly listed by the agency",
+      "year1": "Not publicly listed by the agency",
+      "year2": "Not publicly listed by the agency",
+      "year3": "Not publicly listed by the agency",
+      "year4": "Not publicly listed by the agency",
+      "year5": "Not publicly listed by the agency",
+      "fiveYearTotal": "Not publicly listed by the agency",
+      "topSalary": "Not publicly listed by the agency",
+      "raiseSchedule": "Not publicly listed by the agency",
+      "sourceUrl": "https://www.thecolonytx.gov/162/Police",
+      "verifiedDate": "",
+      "verificationStatus": "needs-review"
     }
   },
   {
@@ -1927,6 +2662,21 @@ const DEPARTMENTS = [
     "privacy": {
       "collectsOfficialApplicationData": false,
       "externalApplicationOnly": true
+    },
+    "compensation": {
+      "recruitSalary": "Not publicly listed by the agency",
+      "startingSalary": "Not publicly listed by the agency",
+      "year1": "Not publicly listed by the agency",
+      "year2": "Not publicly listed by the agency",
+      "year3": "Not publicly listed by the agency",
+      "year4": "Not publicly listed by the agency",
+      "year5": "Not publicly listed by the agency",
+      "fiveYearTotal": "Not publicly listed by the agency",
+      "topSalary": "Not publicly listed by the agency",
+      "raiseSchedule": "Not publicly listed by the agency",
+      "sourceUrl": "https://www.littleelm.org/289/Police-Department",
+      "verifiedDate": "",
+      "verificationStatus": "needs-review"
     }
   },
   {
@@ -1965,6 +2715,21 @@ const DEPARTMENTS = [
     "privacy": {
       "collectsOfficialApplicationData": false,
       "externalApplicationOnly": true
+    },
+    "compensation": {
+      "recruitSalary": "Not publicly listed by the agency",
+      "startingSalary": "Not publicly listed by the agency",
+      "year1": "Not publicly listed by the agency",
+      "year2": "Not publicly listed by the agency",
+      "year3": "Not publicly listed by the agency",
+      "year4": "Not publicly listed by the agency",
+      "year5": "Not publicly listed by the agency",
+      "fiveYearTotal": "Not publicly listed by the agency",
+      "topSalary": "Not publicly listed by the agency",
+      "raiseSchedule": "Not publicly listed by the agency",
+      "sourceUrl": "https://www.lakedallas.com/174/Police-Department",
+      "verifiedDate": "",
+      "verificationStatus": "needs-review"
     }
   },
   {
@@ -2003,6 +2768,21 @@ const DEPARTMENTS = [
     "privacy": {
       "collectsOfficialApplicationData": false,
       "externalApplicationOnly": true
+    },
+    "compensation": {
+      "recruitSalary": "Not publicly listed by the agency",
+      "startingSalary": "Not publicly listed by the agency",
+      "year1": "Not publicly listed by the agency",
+      "year2": "Not publicly listed by the agency",
+      "year3": "Not publicly listed by the agency",
+      "year4": "Not publicly listed by the agency",
+      "year5": "Not publicly listed by the agency",
+      "fiveYearTotal": "Not publicly listed by the agency",
+      "topSalary": "Not publicly listed by the agency",
+      "raiseSchedule": "Not publicly listed by the agency",
+      "sourceUrl": "https://www.cityofcorinth.com/police",
+      "verifiedDate": "",
+      "verificationStatus": "needs-review"
     }
   },
   {
@@ -2041,6 +2821,21 @@ const DEPARTMENTS = [
     "privacy": {
       "collectsOfficialApplicationData": false,
       "externalApplicationOnly": true
+    },
+    "compensation": {
+      "recruitSalary": "Not publicly listed by the agency",
+      "startingSalary": "Not publicly listed by the agency",
+      "year1": "Not publicly listed by the agency",
+      "year2": "Not publicly listed by the agency",
+      "year3": "Not publicly listed by the agency",
+      "year4": "Not publicly listed by the agency",
+      "year5": "Not publicly listed by the agency",
+      "fiveYearTotal": "Not publicly listed by the agency",
+      "topSalary": "Not publicly listed by the agency",
+      "raiseSchedule": "Not publicly listed by the agency",
+      "sourceUrl": "https://www.highlandvillage.org/168/Police",
+      "verifiedDate": "",
+      "verificationStatus": "needs-review"
     }
   },
   {
@@ -2079,6 +2874,21 @@ const DEPARTMENTS = [
     "privacy": {
       "collectsOfficialApplicationData": false,
       "externalApplicationOnly": true
+    },
+    "compensation": {
+      "recruitSalary": "Not publicly listed by the agency",
+      "startingSalary": "Not publicly listed by the agency",
+      "year1": "Not publicly listed by the agency",
+      "year2": "Not publicly listed by the agency",
+      "year3": "Not publicly listed by the agency",
+      "year4": "Not publicly listed by the agency",
+      "year5": "Not publicly listed by the agency",
+      "fiveYearTotal": "Not publicly listed by the agency",
+      "topSalary": "Not publicly listed by the agency",
+      "raiseSchedule": "Not publicly listed by the agency",
+      "sourceUrl": "https://www.rockwall.com/police.asp",
+      "verifiedDate": "",
+      "verificationStatus": "needs-review"
     }
   },
   {
@@ -2117,6 +2927,21 @@ const DEPARTMENTS = [
     "privacy": {
       "collectsOfficialApplicationData": false,
       "externalApplicationOnly": true
+    },
+    "compensation": {
+      "recruitSalary": "Not publicly listed by the agency",
+      "startingSalary": "Not publicly listed by the agency",
+      "year1": "Not publicly listed by the agency",
+      "year2": "Not publicly listed by the agency",
+      "year3": "Not publicly listed by the agency",
+      "year4": "Not publicly listed by the agency",
+      "year5": "Not publicly listed by the agency",
+      "fiveYearTotal": "Not publicly listed by the agency",
+      "topSalary": "Not publicly listed by the agency",
+      "raiseSchedule": "Not publicly listed by the agency",
+      "sourceUrl": "https://www.heathtx.com/departments/public-safety/",
+      "verifiedDate": "",
+      "verificationStatus": "needs-review"
     }
   },
   {
@@ -2155,6 +2980,21 @@ const DEPARTMENTS = [
     "privacy": {
       "collectsOfficialApplicationData": false,
       "externalApplicationOnly": true
+    },
+    "compensation": {
+      "recruitSalary": "Not publicly listed by the agency",
+      "startingSalary": "Not publicly listed by the agency",
+      "year1": "Not publicly listed by the agency",
+      "year2": "Not publicly listed by the agency",
+      "year3": "Not publicly listed by the agency",
+      "year4": "Not publicly listed by the agency",
+      "year5": "Not publicly listed by the agency",
+      "fiveYearTotal": "Not publicly listed by the agency",
+      "topSalary": "Not publicly listed by the agency",
+      "raiseSchedule": "Not publicly listed by the agency",
+      "sourceUrl": "https://www.roysecity.com/145/Police-Department",
+      "verifiedDate": "",
+      "verificationStatus": "needs-review"
     }
   },
   {
@@ -2193,6 +3033,21 @@ const DEPARTMENTS = [
     "privacy": {
       "collectsOfficialApplicationData": false,
       "externalApplicationOnly": true
+    },
+    "compensation": {
+      "recruitSalary": "Not publicly listed by the agency",
+      "startingSalary": "Not publicly listed by the agency",
+      "year1": "Not publicly listed by the agency",
+      "year2": "Not publicly listed by the agency",
+      "year3": "Not publicly listed by the agency",
+      "year4": "Not publicly listed by the agency",
+      "year5": "Not publicly listed by the agency",
+      "fiveYearTotal": "Not publicly listed by the agency",
+      "topSalary": "Not publicly listed by the agency",
+      "raiseSchedule": "Not publicly listed by the agency",
+      "sourceUrl": "https://www.forneytx.gov/218/Police",
+      "verifiedDate": "",
+      "verificationStatus": "needs-review"
     }
   },
   {
@@ -2231,6 +3086,21 @@ const DEPARTMENTS = [
     "privacy": {
       "collectsOfficialApplicationData": false,
       "externalApplicationOnly": true
+    },
+    "compensation": {
+      "recruitSalary": "Not publicly listed by the agency",
+      "startingSalary": "Not publicly listed by the agency",
+      "year1": "Not publicly listed by the agency",
+      "year2": "Not publicly listed by the agency",
+      "year3": "Not publicly listed by the agency",
+      "year4": "Not publicly listed by the agency",
+      "year5": "Not publicly listed by the agency",
+      "fiveYearTotal": "Not publicly listed by the agency",
+      "topSalary": "Not publicly listed by the agency",
+      "raiseSchedule": "Not publicly listed by the agency",
+      "sourceUrl": "https://www.kaufmantx.org/2171/Police-Department",
+      "verifiedDate": "",
+      "verificationStatus": "needs-review"
     }
   },
   {
@@ -2269,6 +3139,21 @@ const DEPARTMENTS = [
     "privacy": {
       "collectsOfficialApplicationData": false,
       "externalApplicationOnly": true
+    },
+    "compensation": {
+      "recruitSalary": "Not publicly listed by the agency",
+      "startingSalary": "Not publicly listed by the agency",
+      "year1": "Not publicly listed by the agency",
+      "year2": "Not publicly listed by the agency",
+      "year3": "Not publicly listed by the agency",
+      "year4": "Not publicly listed by the agency",
+      "year5": "Not publicly listed by the agency",
+      "fiveYearTotal": "Not publicly listed by the agency",
+      "topSalary": "Not publicly listed by the agency",
+      "raiseSchedule": "Not publicly listed by the agency",
+      "sourceUrl": "https://www.cityofterrell.org/159/Police-Department",
+      "verifiedDate": "",
+      "verificationStatus": "needs-review"
     }
   },
   {
@@ -2307,6 +3192,21 @@ const DEPARTMENTS = [
     "privacy": {
       "collectsOfficialApplicationData": false,
       "externalApplicationOnly": true
+    },
+    "compensation": {
+      "recruitSalary": "Not publicly listed by the agency",
+      "startingSalary": "Not publicly listed by the agency",
+      "year1": "Not publicly listed by the agency",
+      "year2": "Not publicly listed by the agency",
+      "year3": "Not publicly listed by the agency",
+      "year4": "Not publicly listed by the agency",
+      "year5": "Not publicly listed by the agency",
+      "fiveYearTotal": "Not publicly listed by the agency",
+      "topSalary": "Not publicly listed by the agency",
+      "raiseSchedule": "Not publicly listed by the agency",
+      "sourceUrl": "https://www.waxahachie.com/departments/police_department/index.php",
+      "verifiedDate": "",
+      "verificationStatus": "needs-review"
     }
   },
   {
@@ -2345,6 +3245,21 @@ const DEPARTMENTS = [
     "privacy": {
       "collectsOfficialApplicationData": false,
       "externalApplicationOnly": true
+    },
+    "compensation": {
+      "recruitSalary": "Not publicly listed by the agency",
+      "startingSalary": "Not publicly listed by the agency",
+      "year1": "Not publicly listed by the agency",
+      "year2": "Not publicly listed by the agency",
+      "year3": "Not publicly listed by the agency",
+      "year4": "Not publicly listed by the agency",
+      "year5": "Not publicly listed by the agency",
+      "fiveYearTotal": "Not publicly listed by the agency",
+      "topSalary": "Not publicly listed by the agency",
+      "raiseSchedule": "Not publicly listed by the agency",
+      "sourceUrl": "https://www.midlothian.tx.us/166/Police",
+      "verifiedDate": "",
+      "verificationStatus": "needs-review"
     }
   },
   {
@@ -2383,6 +3298,21 @@ const DEPARTMENTS = [
     "privacy": {
       "collectsOfficialApplicationData": false,
       "externalApplicationOnly": true
+    },
+    "compensation": {
+      "recruitSalary": "Not publicly listed by the agency",
+      "startingSalary": "Not publicly listed by the agency",
+      "year1": "Not publicly listed by the agency",
+      "year2": "Not publicly listed by the agency",
+      "year3": "Not publicly listed by the agency",
+      "year4": "Not publicly listed by the agency",
+      "year5": "Not publicly listed by the agency",
+      "fiveYearTotal": "Not publicly listed by the agency",
+      "topSalary": "Not publicly listed by the agency",
+      "raiseSchedule": "Not publicly listed by the agency",
+      "sourceUrl": "https://www.ennistx.gov/departments/police",
+      "verifiedDate": "",
+      "verificationStatus": "needs-review"
     }
   },
   {
@@ -2421,6 +3351,21 @@ const DEPARTMENTS = [
     "privacy": {
       "collectsOfficialApplicationData": false,
       "externalApplicationOnly": true
+    },
+    "compensation": {
+      "recruitSalary": "Not publicly listed by the agency",
+      "startingSalary": "Not publicly listed by the agency",
+      "year1": "Not publicly listed by the agency",
+      "year2": "Not publicly listed by the agency",
+      "year3": "Not publicly listed by the agency",
+      "year4": "Not publicly listed by the agency",
+      "year5": "Not publicly listed by the agency",
+      "fiveYearTotal": "Not publicly listed by the agency",
+      "topSalary": "Not publicly listed by the agency",
+      "raiseSchedule": "Not publicly listed by the agency",
+      "sourceUrl": "https://www.ci.sherman.tx.us/111/Police",
+      "verifiedDate": "",
+      "verificationStatus": "needs-review"
     }
   },
   {
@@ -2459,6 +3404,21 @@ const DEPARTMENTS = [
     "privacy": {
       "collectsOfficialApplicationData": false,
       "externalApplicationOnly": true
+    },
+    "compensation": {
+      "recruitSalary": "Not publicly listed by the agency",
+      "startingSalary": "Not publicly listed by the agency",
+      "year1": "Not publicly listed by the agency",
+      "year2": "Not publicly listed by the agency",
+      "year3": "Not publicly listed by the agency",
+      "year4": "Not publicly listed by the agency",
+      "year5": "Not publicly listed by the agency",
+      "fiveYearTotal": "Not publicly listed by the agency",
+      "topSalary": "Not publicly listed by the agency",
+      "raiseSchedule": "Not publicly listed by the agency",
+      "sourceUrl": "https://www.cityofdenison.com/214/Police",
+      "verifiedDate": "",
+      "verificationStatus": "needs-review"
     }
   }
 ];

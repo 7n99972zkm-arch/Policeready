@@ -8,7 +8,12 @@ function openScreen(id){document.querySelectorAll('.screen').forEach(x=>x.classL
 document.querySelectorAll('[data-open]').forEach(x=>x.onclick=()=>openScreen(x.dataset.open));
 function favorites(){return read('favorites',[])}
 function toggleFavorite(id){let a=favorites();a=a.includes(id)?a.filter(x=>x!==id):[...a,id];write('favorites',a);renderDepartments();updateDashboard()} window.toggleFavorite=toggleFavorite;
-function selectedCompare(id){compareIds=compareIds.includes(id)?compareIds.filter(x=>x!==id):compareIds.length<2?[...compareIds,id]:compareIds;renderDepartments();$('compareBtn').disabled=compareIds.length!==2;$('compareBtn').textContent=`Compare (${compareIds.length})`} window.selectedCompare=selectedCompare;
+function selectedCompare(id){
+  compareIds=compareIds.includes(id)?compareIds.filter(x=>x!==id):compareIds.length<4?[...compareIds,id]:compareIds;
+  renderDepartments();
+  $('compareBtn').disabled=compareIds.length<2;
+  $('compareBtn').textContent=`Compare (${compareIds.length})`;
+} window.selectedCompare=selectedCompare;
 function populateCounty(){const counties=[...new Set(DEPARTMENTS.flatMap(d=>d.county.split('/')))].sort();$('countyFilter').innerHTML='<option value="">All counties</option>'+counties.map(c=>`<option>${esc(c)}</option>`).join('')}
 function renderDepartments(){const q=$('departmentSearch').value.toLowerCase().trim(),county=$('countyFilter').value,status=$('statusFilter').value,favs=favorites();const list=DEPARTMENTS.filter(d=>(!q||`${d.name} ${d.city} ${d.county} ${d.state}`.toLowerCase().includes(q))&&(!county||d.county.split('/').includes(county))&&(!status||d.status===status)&&(!favoritesOnly||favs.includes(d.id)));$('departmentList').innerHTML=list.length?list.map(d=>`<article class="dept-card ${compareIds.includes(d.id)?'selected':''}"><div class="dept-top"><div><span class="status ${d.status}">${d.status==='verified'?'Verified details':'Official link available'}</span><h3>${esc(d.name)}</h3><p>${esc(d.city)}, ${esc(d.state)} • ${esc(d.county)} County</p></div><button class="favorite ${favs.includes(d.id)?'active':''}" onclick="toggleFavorite(${d.id})" aria-label="Favorite">★</button></div><p class="meta">${d.fitnessVerified?'Agency workout available':'General workout only until fitness standard is verified'}</p><div class="dept-actions"><button class="secondary" onclick="openDepartment(${d.id})">View information</button><button class="outline" onclick="selectedCompare(${d.id})">${compareIds.includes(d.id)?'Selected':'Compare'}</button></div></article>`).join(''):'<div class="mission empty-state">No matching departments.</div>'}
 $('departmentSearch').oninput=renderDepartments;$('countyFilter').onchange=renderDepartments;$('statusFilter').onchange=renderDepartments;$('showFavorites').onclick=()=>{favoritesOnly=!favoritesOnly;$('showFavorites').textContent=`Favorites only: ${favoritesOnly?'On':'Off'}`;renderDepartments()};
@@ -124,3 +129,53 @@ function renderDataStatus(){
   list.innerHTML=ordered.map(d=>`<article class="data-row"><div><span class="kicker">${esc(d.county)} COUNTY</span><h3>${esc(d.name)}</h3><p>${d.status==='verified'?'Official information summarized inside PoliceReady':'Official external link available; detailed fields not yet summarized'}</p></div><div class="data-row-meta"><b>${profileCompleteness(d)}%</b><small>field coverage</small><span class="status ${d.status}">${d.fitnessVerified?'Workout ready':d.status==='verified'?'Summary verified':'Link only'}</span></div><div class="profile-meter full-meter"><span style="width:${profileCompleteness(d)}%"></span></div><div class="item-actions"><button class="secondary" onclick="openDepartment(${d.id})">View profile</button><a class="outline link-btn" href="${esc(d.officialUrl)}" target="_blank" rel="noopener">Official site ↗</a></div></article>`).join('');
 }
 renderDataStatus();
+
+
+// v0.7 — verified compensation and 2-to-4 agency comparison
+function compensationFor(d){
+  const c=d.compensation||{};
+  const unavailable='Not publicly listed by the agency';
+  return {
+    recruit:c.recruitSalary||d.salary||unavailable,
+    starting:c.startingSalary||d.salary||unavailable,
+    year1:c.year1||unavailable,
+    year2:c.year2||unavailable,
+    year3:c.year3||unavailable,
+    year4:c.year4||unavailable,
+    year5:c.year5||unavailable,
+    top:c.topSalary||unavailable,
+    schedule:c.raiseSchedule||unavailable,
+    fiveYear:c.fiveYearTotal||unavailable,
+    source:c.sourceUrl||d.officialUrl
+  };
+}
+function compareValue(d,key){
+  const c=compensationFor(d);
+  const values={
+    coverage:`${profileCompleteness(d)}%`,city:d.city,county:d.county,minimumAge:d.minimumAge,
+    education:d.education,recruit:c.recruit,starting:c.starting,year1:c.year1,year2:c.year2,
+    year3:c.year3,year4:c.year4,year5:c.year5,fiveYear:c.fiveYear,top:c.top,schedule:c.schedule,
+    benefits:d.benefits,hiringProcess:d.hiringProcess,fitness:d.fitness,
+    workout:d.fitnessVerified?'Available':'Not yet verified',veteran:d.veteranPreference,
+    checked:d.verifiedDate||'Not yet verified'
+  };
+  return values[key]||'Not publicly listed by the agency';
+}
+if($('compareBtn')) $('compareBtn').onclick=()=>{
+  if(compareIds.length<2||compareIds.length>4)return;
+  const agencies=compareIds.map(id=>DEPARTMENTS.find(x=>x.id===id)).filter(Boolean);
+  const rowDefs=[
+    ['Profile coverage','coverage'],['City','city'],['County','county'],['Minimum age','minimumAge'],
+    ['Education','education'],['Recruit / academy salary','recruit'],['Starting officer salary','starting'],
+    ['Year 1 salary','year1'],['Year 2 salary','year2'],['Year 3 salary','year3'],['Year 4 salary','year4'],
+    ['Year 5 salary','year5'],['Estimated first 5 years','fiveYear'],['Top salary','top'],
+    ['Raise / step schedule','schedule'],['Benefits','benefits'],['Hiring process','hiringProcess'],
+    ['Fitness standards','fitness'],['Agency workout','workout'],['Veteran preference','veteran'],['Last checked','checked']
+  ];
+  const cols=agencies.length+1;
+  const title=agencies.map(d=>d.city).join(' vs. ');
+  const rows=rowDefs.map(([label,key])=>`<div style="grid-template-columns:repeat(${cols},minmax(180px,1fr))"><span>${esc(label)}</span>${agencies.map(d=>`<span>${esc(compareValue(d,key))}</span>`).join('')}</div>`).join('');
+  const sources=agencies.map(d=>`<a class="secondary link-btn" href="${esc((d.compensation&&d.compensation.sourceUrl)||d.officialUrl)}" target="_blank" rel="noopener">Official ${esc(d.city)} source ↗</a>`).join('');
+  $('modalContent').innerHTML=`<span class="kicker">VERIFIED COMPENSATION COMPARISON</span><h1>${esc(title)}</h1><article class="comparison-summary"><b>How to read this</b><p>Salary values are shown only when supported by an official city or agency source. Missing fields remain clearly marked rather than estimated.</p></article><div class="compare-table wide-compare"><div class="compare-head" style="grid-template-columns:repeat(${cols},minmax(180px,1fr))"><b>Category</b>${agencies.map(d=>`<b>${esc(d.name)}</b>`).join('')}</div>${rows}</div><div class="comparison-note">Five-year totals are included only when the official pay schedule supports the calculation. Overtime, incentives, specialty pay, and future contract changes are excluded unless specifically stated.</div><div class="modal-actions">${sources}</div>`;
+  $('modal').classList.remove('hidden');
+};

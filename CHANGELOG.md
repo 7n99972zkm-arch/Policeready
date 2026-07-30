@@ -1,5 +1,15 @@
 # Changelog
 
+## v0.7 - Verified Compensation Compare
+- Compare 2 to 4 departments at once.
+- Added recruit, starting, Years 1-5, top salary, raise schedule, and five-year total fields.
+- Added official compensation-source links and verification status.
+- Missing salary values display as "Not publicly listed by the agency" instead of estimates.
+- Added verified Plano five-year salary progression from the official police employment page.
+- Added official pay-plan links for Frisco, Allen, and McKinney for the next verification pass.
+
+# Changelog
+
 ## v0.6
 - Moved department records into a dedicated `data/` layer
 - Converted agency entries to explicit structured records

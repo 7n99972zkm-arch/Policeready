@@ -11,3 +11,6 @@
 
 /* v0.6 data status */
 .data-row{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:18px;display:grid;grid-template-columns:1fr auto;gap:12px;align-items:start}.data-row h3{margin:4px 0}.data-row p{margin:0;color:var(--muted)}.data-row-meta{text-align:right;display:flex;flex-direction:column;gap:3px;align-items:flex-end}.data-row-meta b{font-size:1.4rem}.full-meter{grid-column:1/-1}.data-row .item-actions{grid-column:1/-1}@media(max-width:560px){.data-row{grid-template-columns:1fr}.data-row-meta{text-align:left;align-items:flex-start}.full-meter,.data-row .item-actions{grid-column:1}}
+
+/* v0.7 */
+.wide-compare{overflow:auto}.wide-compare>div{min-width:max-content}.wide-compare span,.wide-compare b{min-width:180px}.comparison-summary{margin:14px 0 18px;padding:16px;border-radius:14px;background:#081421;border:1px solid var(--line)}
