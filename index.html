@@ -1,130 +1,20 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <meta name="theme-color" content="#0b1220" />
-  <title>PoliceReady</title>
-  <link rel="manifest" href="manifest.json" />
-  <link rel="stylesheet" href="styles.css" />
-</head>
-<body>
-  <header class="topbar">
-    <div>
-      <p class="eyebrow">POLICEREADY</p>
-      <h1>Train. Track. Get hired.</h1>
-    </div>
-    <button id="installBtn" class="ghost hidden">Install</button>
-  </header>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#07111f"><title>PoliceReady</title><link rel="manifest" href="manifest.json"><link rel="stylesheet" href="styles.css"></head><body>
+<header class="app-header"><button class="brand" data-open="home" aria-label="Home"><span class="brand-mark">PR</span><span><b>PoliceReady</b><small>Train hard. Test smart. Get hired.</small></span></button><button id="installBtn" class="outline hidden">Install</button></header>
+<main>
+<section id="home" class="screen active"><div class="hero"><div><span class="kicker">YOUR APPLICANT COMMAND CENTER</span><h1>Prepare with purpose.</h1><p>Build workouts, improve your pace, organize applications, and verify agency information from official public sources.</p><div class="hero-actions"><button class="primary" data-open="training">Start today’s workout</button><button class="secondary" data-open="departments">Find departments</button></div></div><div class="countdown"><small id="testLabel">NEXT TEST</small><strong id="countdownValue">Not set</strong><button data-open="profile">Set test date</button></div></div>
+<div class="stats"><article><span>Applications</span><strong id="applicationCount">0</strong></article><article><span>Official sources</span><strong id="departmentCount">0</strong></article><article><span>Current 1.5 mi</span><strong id="runStat">—</strong></article></div>
+<section class="section"><div class="section-title"><div><span class="kicker">TODAY</span><h2>Your mission</h2></div><button class="text-btn" data-open="training">Build workout →</button></div><article id="todayMission" class="mission empty-state">Generate a workout to create today’s mission.</article></section>
+<section class="section"><div class="quick-grid"><button data-open="training"><span>🏃</span><b>Training</b><small>Workout + run pace</small></button><button data-open="departments"><span>🚔</span><b>Departments</b><small>Official public sources</small></button><button data-open="applications"><span>📋</span><b>Applications</b><small>Track every stage</small></button><button data-open="profile"><span>🎯</span><b>My Plan</b><small>Countdown + settings</small></button></div></section>
+<article class="policy"><b>Independent public-information policy</b><p>PoliceReady is not affiliated with or endorsed by any law-enforcement agency. Department-specific information must come from publicly available official government or agency sources. Always confirm current requirements directly with the hiring agency.</p></article></section>
 
-  <main>
-    <section class="hero card">
-      <div>
-        <span class="pill">Phase 1</span>
-        <h2>Your applicant command center</h2>
-        <p>Build workouts, calculate running pace, track applications, and save department sources.</p>
-      </div>
-      <div class="countdown-box">
-        <span>Next test</span>
-        <strong id="countdownValue">Not set</strong>
-        <button class="link-btn" data-open="settings">Set date</button>
-      </div>
-    </section>
+<section id="training" class="screen"><div class="page-head"><div><span class="kicker">TRAINING</span><h1>Get test-ready</h1><p>Generate a focused session and measure your running pace.</p></div></div><div class="subtabs"><button class="subtab active" data-sub="workoutPanel">Workout</button><button class="subtab" data-sub="runPanel">Run calculator</button></div>
+<div id="workoutPanel" class="subpanel active"><article class="card"><h2>Build today’s session</h2><form id="workoutForm" class="form-grid"><label>Training goal<select id="goal"><option value="1.5 mile">1.5-mile test</option><option value="cooper">Cooper test</option><option value="popat">Obstacle/agility test</option><option value="general">General academy fitness</option></select></label><label>Equipment<select id="equipment"><option value="running">Running only</option><option value="home">Home/bodyweight</option><option value="dumbbells">Dumbbells</option><option value="gym">Full gym</option></select></label><label>Time available<select id="duration"><option value="20">20 minutes</option><option value="30" selected>30 minutes</option><option value="45">45 minutes</option><option value="60">60 minutes</option></select></label><label>Fitness level<select id="level"><option value="beginner">Beginner</option><option value="intermediate" selected>Intermediate</option><option value="advanced">Advanced</option></select></label><button class="primary full">Generate workout</button></form></article><article id="workoutResult" class="card hidden"></article></div>
+<div id="runPanel" class="subpanel"><article class="card"><h2>Calculate pace and projection</h2><form id="runForm" class="form-grid"><label>Distance (miles)<input id="distance" type="number" min=".1" step=".01" value="1.5" required></label><label>Minutes<input id="minutes" type="number" min="0" value="12" required></label><label>Seconds<input id="seconds" type="number" min="0" max="59" value="0" required></label><label>Goal time (optional, minutes)<input id="goalMinutes" type="number" min="0" step=".1" placeholder="11.5"></label><button class="primary full">Calculate</button></form></article><article id="runResult" class="card hidden"></article></div></section>
 
-    <nav class="tabs" aria-label="App sections">
-      <button class="tab active" data-tab="dashboard">Home</button>
-      <button class="tab" data-tab="workout">Workout</button>
-      <button class="tab" data-tab="run">Run</button>
-      <button class="tab" data-tab="applications">Applications</button>
-      <button class="tab" data-tab="departments">Sources</button>
-    </nav>
+<section id="departments" class="screen"><div class="page-head"><div><span class="kicker">DEPARTMENTS</span><h1>Official source library</h1><p>Save public hiring standards, fitness requirements, salaries, recruiter details, and official study guides.</p></div></div><article class="card"><input id="departmentSearch" class="search" placeholder="Search saved departments or information types"><form id="departmentForm" class="form-grid spaced"><label>Department<input id="deptName" required placeholder="Plano Police Department"></label><label>Official source URL<input id="deptUrl" type="url" required placeholder="https://..."></label><label>Information type<select id="deptType"><option>Hiring requirements</option><option>Fitness standards</option><option>Written exam</option><option>Salary and benefits</option><option>Hiring process</option><option>Recruiter contact</option><option>Academy dates</option><option>Official study guide</option></select></label><label>Last verified<input id="verifiedDate" type="date" required></label><label class="full">Public details<textarea id="deptDetails" rows="4" placeholder="Summarize only what the official page publicly states."></textarea></label><button class="primary full">Save official source</button></form></article><div id="departmentList" class="stack"></div></section>
 
-    <section id="dashboard" class="panel active">
-      <div class="grid two">
-        <article class="card stat-card"><span>Applications</span><strong id="applicationCount">0</strong></article>
-        <article class="card stat-card"><span>Saved departments</span><strong id="departmentCount">0</strong></article>
-      </div>
-      <article class="card">
-        <div class="section-head"><div><p class="eyebrow">TODAY</p><h3>Recommended mission</h3></div><button class="ghost" data-open="workout">Generate</button></div>
-        <div id="todayMission" class="empty">Generate a workout to create today’s mission.</div>
-      </article>
-      <article class="card disclaimer">
-        <h3>Public information policy</h3>
-        <p>PoliceReady is an independent preparation platform and is not affiliated with or endorsed by any law-enforcement agency. Department standards, salaries, testing information, recruiter details, and hiring requirements must come from publicly available official sources. Applicants should always confirm current requirements directly with the hiring agency.</p>
-      </article>
-    </section>
+<section id="applications" class="screen"><div class="page-head"><div><span class="kicker">APPLICATIONS</span><h1>Stay organized</h1><p>Track every agency, milestone, date, and next action.</p></div></div><article class="card"><form id="applicationForm" class="form-grid"><label>Department<input id="appDepartment" required placeholder="Plano Police Department"></label><label>Current stage<select id="appStage"><option>Considering</option><option>Applied</option><option>Written test</option><option>Physical test</option><option>Oral board</option><option>Polygraph</option><option>Background</option><option>Medical/Psych</option><option>Academy</option><option>Hired</option></select></label><label>Next date<input id="appDate" type="date"></label><label>Notes<input id="appNotes" placeholder="Recruiter, deadline, next action"></label><button class="primary full">Add application</button></form></article><div id="applicationList" class="stack"></div></section>
 
-    <section id="workout" class="panel">
-      <article class="card">
-        <div class="section-head"><div><p class="eyebrow">WORKOUT GENERATOR</p><h3>Build today’s session</h3></div></div>
-        <form id="workoutForm" class="form-grid">
-          <label>Training goal<select id="goal"><option value="1.5 mile">1.5-mile test</option><option value="cooper">Cooper test</option><option value="popat">Obstacle/agility test</option><option value="general">General academy fitness</option></select></label>
-          <label>Equipment<select id="equipment"><option value="running">Running only</option><option value="home">Home/bodyweight</option><option value="dumbbells">Dumbbells</option><option value="gym">Full gym</option></select></label>
-          <label>Time available<select id="duration"><option value="20">20 minutes</option><option value="30" selected>30 minutes</option><option value="45">45 minutes</option><option value="60">60 minutes</option></select></label>
-          <label>Fitness level<select id="level"><option value="beginner">Beginner</option><option value="intermediate" selected>Intermediate</option><option value="advanced">Advanced</option></select></label>
-          <button type="submit" class="primary full">Generate workout</button>
-        </form>
-      </article>
-      <article id="workoutResult" class="card hidden"></article>
-    </section>
-
-    <section id="run" class="panel">
-      <article class="card">
-        <p class="eyebrow">RUN CALCULATOR</p><h3>Calculate pace and projection</h3>
-        <form id="runForm" class="form-grid">
-          <label>Distance (miles)<input id="distance" type="number" min="0.1" step="0.01" value="1.5" required /></label>
-          <label>Minutes<input id="minutes" type="number" min="0" value="12" required /></label>
-          <label>Seconds<input id="seconds" type="number" min="0" max="59" value="0" required /></label>
-          <label>Goal time, optional (minutes)<input id="goalMinutes" type="number" min="0" step="0.1" placeholder="11.5" /></label>
-          <button type="submit" class="primary full">Calculate</button>
-        </form>
-      </article>
-      <article id="runResult" class="card hidden"></article>
-    </section>
-
-    <section id="applications" class="panel">
-      <article class="card">
-        <p class="eyebrow">APPLICATION TRACKER</p><h3>Add an agency</h3>
-        <form id="applicationForm" class="form-grid">
-          <label>Department<input id="appDepartment" required placeholder="Plano Police Department" /></label>
-          <label>Current stage<select id="appStage"><option>Considering</option><option>Applied</option><option>Written test</option><option>Physical test</option><option>Oral board</option><option>Polygraph</option><option>Background</option><option>Medical/Psych</option><option>Academy</option><option>Hired</option></select></label>
-          <label>Next date<input id="appDate" type="date" /></label>
-          <label>Notes<input id="appNotes" placeholder="Recruiter, deadline, next action" /></label>
-          <button type="submit" class="primary full">Add application</button>
-        </form>
-      </article>
-      <div id="applicationList" class="stack"></div>
-    </section>
-
-    <section id="departments" class="panel">
-      <article class="card">
-        <p class="eyebrow">OFFICIAL SOURCE TRACKER</p><h3>Save a department source</h3>
-        <p class="muted">Only add information from an official agency, city, county, state, or government website.</p>
-        <form id="departmentForm" class="form-grid">
-          <label>Department<input id="deptName" required placeholder="Dallas Police Department" /></label>
-          <label>Official source URL<input id="deptUrl" type="url" required placeholder="https://..." /></label>
-          <label>Information type<select id="deptType"><option>Hiring requirements</option><option>Fitness standards</option><option>Written exam</option><option>Salary and benefits</option><option>Hiring process</option><option>Recruiter contact</option><option>Academy dates</option><option>Official study guide</option></select></label>
-          <label>Last verified<input id="verifiedDate" type="date" required /></label>
-          <label class="full">Public details<textarea id="deptDetails" rows="4" placeholder="Summarize only what the official page publicly states."></textarea></label>
-          <button type="submit" class="primary full">Save official source</button>
-        </form>
-      </article>
-      <div id="departmentList" class="stack"></div>
-    </section>
-
-    <section id="settings" class="panel">
-      <article class="card">
-        <p class="eyebrow">SETTINGS</p><h3>Set your next test</h3>
-        <form id="settingsForm" class="form-grid">
-          <label>Test name<input id="testName" placeholder="Physical ability test" /></label>
-          <label>Test date<input id="testDate" type="date" /></label>
-          <button class="primary full">Save countdown</button>
-        </form>
-      </article>
-    </section>
-  </main>
-
-  <footer>PoliceReady MVP • Data is stored only on this device.</footer>
-  <script src="app.js"></script>
-</body>
-</html>
+<section id="profile" class="screen"><div class="page-head"><div><span class="kicker">MY PLAN</span><h1>Personalize PoliceReady</h1><p>Set your next test and review how your information is stored.</p></div></div><article class="card"><h2>Next test countdown</h2><form id="settingsForm" class="form-grid"><label>Test name<input id="testName" placeholder="Physical ability test"></label><label>Test date<input id="testDate" type="date"></label><button class="primary full">Save countdown</button></form></article><article class="card"><h2>Privacy</h2><p class="muted">This free version stores your workouts, run calculation, sources, applications, and countdown only in this browser on this device. PoliceReady does not send that information to a server.</p></article><article class="card danger-zone"><h2>Reset local data</h2><p class="muted">This permanently removes all PoliceReady data saved in this browser.</p><button id="resetData" class="danger">Delete my local data</button></article></section>
+</main>
+<nav class="bottom-nav"><button class="nav-item active" data-open="home"><span>⌂</span><small>Home</small></button><button class="nav-item" data-open="training"><span>↗</span><small>Training</small></button><button class="nav-item" data-open="departments"><span>⌕</span><small>Departments</small></button><button class="nav-item" data-open="applications"><span>☑</span><small>Applications</small></button><button class="nav-item" data-open="profile"><span>◎</span><small>My Plan</small></button></nav><script src="app.js"></script></body></html>
