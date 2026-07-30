@@ -1,8 +1,8 @@
-# PoliceReady v0.5
+# PoliceReady v0.6
 
 A free, mobile-first police applicant research and fitness-preparation tool.
 
-## v0.5 features
+## v0.6 features
 - Search 64 North Texas agencies by agency, city, or county
 - Read summarized public information inside PoliceReady
 - Open official external pages for applications and sensitive forms
@@ -17,3 +17,8 @@ PoliceReady is independent and is not endorsed by any agency. Department-specifi
 
 ## Privacy rule
 PoliceReady must never collect official applications, background packets, SSNs, driver-license numbers, medical records, financial details, passwords, or uploaded hiring documents. Users must submit important information through official external agency systems.
+
+
+## v0.6 architecture
+
+Department records now live in `data/departments.js`. The app exposes a Data Status screen so incomplete profiles are visible rather than disguised as verified.

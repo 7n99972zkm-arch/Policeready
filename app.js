@@ -111,3 +111,16 @@ if($('generateAgencyWorkout')) $('generateAgencyWorkout').onclick=()=>{
   if(date){const days=Math.ceil((new Date(date+'T00:00:00')-new Date())/864e5); if(days>=0) details.push(`${days} days until test`);}
   if(details.length) result.insertAdjacentHTML('afterbegin',`<article class="readiness-strip"><b>Your starting point</b><p>${details.map(esc).join(' • ')}</p><small>These numbers personalize context only; PoliceReady does not predict whether you will pass.</small></article>`);
 };
+
+// v0.6 — transparent public-source data coverage
+function renderDataStatus(){
+  const stats=$('dataStatusStats'), list=$('dataStatusList');
+  if(!stats||!list) return;
+  const verified=DEPARTMENTS.filter(d=>d.status==='verified').length;
+  const workouts=DEPARTMENTS.filter(d=>d.fitnessVerified).length;
+  const linked=DEPARTMENTS.filter(d=>d.officialUrl).length;
+  stats.innerHTML=`<article><span>Total agencies</span><strong>${DEPARTMENTS.length}</strong></article><article><span>Summarized profiles</span><strong>${verified}</strong></article><article><span>Official links</span><strong>${linked}</strong></article><article><span>Workout-ready standards</span><strong>${workouts}</strong></article>`;
+  const ordered=[...DEPARTMENTS].sort((a,b)=>profileCompleteness(b)-profileCompleteness(a)||a.name.localeCompare(b.name));
+  list.innerHTML=ordered.map(d=>`<article class="data-row"><div><span class="kicker">${esc(d.county)} COUNTY</span><h3>${esc(d.name)}</h3><p>${d.status==='verified'?'Official information summarized inside PoliceReady':'Official external link available; detailed fields not yet summarized'}</p></div><div class="data-row-meta"><b>${profileCompleteness(d)}%</b><small>field coverage</small><span class="status ${d.status}">${d.fitnessVerified?'Workout ready':d.status==='verified'?'Summary verified':'Link only'}</span></div><div class="profile-meter full-meter"><span style="width:${profileCompleteness(d)}%"></span></div><div class="item-actions"><button class="secondary" onclick="openDepartment(${d.id})">View profile</button><a class="outline link-btn" href="${esc(d.officialUrl)}" target="_blank" rel="noopener">Official site ↗</a></div></article>`).join('');
+}
+renderDataStatus();

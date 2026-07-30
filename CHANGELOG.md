@@ -1,5 +1,15 @@
 # Changelog
 
+## v0.6
+- Moved department records into a dedicated `data/` layer
+- Converted agency entries to explicit structured records
+- Added source-quality and privacy metadata
+- Added a public data-status dashboard
+- Preserved official-link-only labels for unreviewed fields
+- Kept agency workouts locked to verified usable standards
+- Updated offline cache and version labels
+
+
 ## v0.5
 - Added Find My Department preference matching
 - Added smarter comparison notes and profile-coverage percentages
