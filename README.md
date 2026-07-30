@@ -1,18 +1,17 @@
-# PoliceReady v0.3
+# PoliceReady v0.4
 
-A free, mobile-friendly police applicant companion.
+A free, mobile-friendly police applicant research and fitness-preparation tool.
 
-## Version 0.3 features
-- North Texas launch directory
-- Search by agency, city, county, or state
-- County and verification-status filters
-- Favorites stored locally
-- Two-agency comparison
-- Official-source links and data-status labels
-- Workout generator
-- Run pace calculator
-- Application tracker
-- Test countdown
+## Version 0.4
+- Searchable North Texas department directory
+- Department information displayed inside PoliceReady
+- Side-by-side in-app comparison
+- External-only official applications and sensitive forms
+- Verified-source labels and source links
+- Agency-specific workout generation only when usable fitness information is verified
+- Safe application stage tracking without official application data
 
-## Public-information policy
-PoliceReady is independent and is not endorsed by any agency. Department-specific information must come from official public sources. Users should confirm current requirements directly with each agency.
+## Public information and privacy policy
+PoliceReady is independent and is not affiliated with or endorsed by any law-enforcement agency. Department-specific information must come from publicly available official government or agency sources. Users must confirm current requirements directly with each agency.
+
+PoliceReady does not collect Social Security numbers, driver-license numbers, official background packets, medical records, financial information, passwords, or application documents.
