@@ -1,17 +1,19 @@
-# PoliceReady v0.4
+# PoliceReady v0.5
 
-A free, mobile-friendly police applicant research and fitness-preparation tool.
+A free, mobile-first police applicant research and fitness-preparation tool.
 
-## Version 0.4
-- Searchable North Texas department directory
-- Department information displayed inside PoliceReady
-- Side-by-side in-app comparison
-- External-only official applications and sensitive forms
-- Verified-source labels and source links
-- Agency-specific workout generation only when usable fitness information is verified
-- Safe application stage tracking without official application data
+## v0.5 features
+- Search 64 North Texas agencies by agency, city, or county
+- Read summarized public information inside PoliceReady
+- Open official external pages for applications and sensitive forms
+- Compare two departments with data-coverage and best-fit notes
+- Find My Department preference matcher
+- Agency-based workout generation only where fitness data is verified
+- Readiness context using user-entered fitness numbers without pass/fail predictions
+- Local-only favorites, countdowns, workouts, and safe application-stage tracking
 
-## Public information and privacy policy
-PoliceReady is independent and is not affiliated with or endorsed by any law-enforcement agency. Department-specific information must come from publicly available official government or agency sources. Users must confirm current requirements directly with each agency.
+## Public-information policy
+PoliceReady is independent and is not endorsed by any agency. Department-specific claims must be supported by official public sources. Missing fields remain clearly labeled rather than guessed.
 
-PoliceReady does not collect Social Security numbers, driver-license numbers, official background packets, medical records, financial information, passwords, or application documents.
+## Privacy rule
+PoliceReady must never collect official applications, background packets, SSNs, driver-license numbers, medical records, financial details, passwords, or uploaded hiring documents. Users must submit important information through official external agency systems.

@@ -33,3 +33,81 @@ function countdown(){const x=read('testSettings',{});$('testName').value=x.name|
 function updateDashboard(){const apps=read('applications'),favs=favorites(),w=read('lastWorkout',null);$('directoryCount').textContent=DEPARTMENTS.length;$('favoriteCount').textContent=favs.length;$('applicationCount').textContent=apps.length;$('verifiedFitnessCount').textContent=DEPARTMENTS.filter(d=>d.fitnessVerified).length;$('todayMission').innerHTML=w?`<span class="kicker">${esc(w.level)} • ${esc(w.duration)} MIN</span><h2>${esc(w.department)}</h2><p>${w.plan.slice(0,3).map(esc).join(' • ')}</p>`:'Choose an agency with verified fitness information to create a standards-based workout.';const fd=DEPARTMENTS.filter(d=>favs.includes(d.id)).slice(0,4);$('homeFavorites').innerHTML=fd.length?fd.map(d=>`<button onclick="openDepartment(${d.id})"><b>${esc(d.city)}</b><small>${esc(d.name)}</small></button>`).join(''):'<div class="mission empty-state">Save departments to see them here.</div>'}
 $('resetData').onclick=()=>{if(confirm('Delete all PoliceReady data saved in this browser?')){localStorage.clear();location.reload()}};
 populateCounty();populateTrainingDepartments();renderDepartments();renderApps();countdown();updateDashboard();
+
+// v0.5 — department matching, profile completeness, and smarter comparison
+function numericSalary(d){
+  const values=String(d.salary||'').match(/\$?([0-9]{2,3}(?:,[0-9]{3})?)/g)||[];
+  return values.map(v=>Number(v.replace(/[$,]/g,''))).filter(n=>n>10000).sort((a,b)=>b-a)[0]||0;
+}
+function profileCompleteness(d){
+  const fields=['minimumAge','education','salary','benefits','hiringProcess','fitness','veteranPreference'];
+  const complete=fields.filter(k=>d[k] && !/see official source/i.test(d[k])).length;
+  return Math.round(complete/fields.length*100);
+}
+function finderCounties(){
+  const el=$('finderCounty'); if(!el) return;
+  const counties=[...new Set(DEPARTMENTS.flatMap(d=>d.county.split('/')))].sort();
+  el.innerHTML='<option value="">Anywhere in North Texas</option>'+counties.map(c=>`<option>${esc(c)}</option>`).join('');
+}
+function matchDepartment(d,prefs){
+  let score=0, reasons=[];
+  if(d.status==='verified'){score+=30; reasons.push('verified profile');}
+  if(prefs.county && d.county.includes(prefs.county)){score+=25; reasons.push(`serves ${prefs.county} County`);}
+  const pay=numericSalary(d);
+  if(prefs.pay && pay>=prefs.pay){score+=20; reasons.push('meets published pay preference');}
+  else if(!prefs.pay) score+=5;
+  if(prefs.fitness && d.fitnessType===prefs.fitness){score+=15; reasons.push(`${prefs.fitness} fitness format`);}
+  if(prefs.workout && d.fitnessVerified){score+=20; reasons.push('agency workout available');}
+  if(prefs.veteran && d.veteranPreference && !/see official source/i.test(d.veteranPreference)){score+=10; reasons.push('veteran information available');}
+  score+=Math.round(profileCompleteness(d)/10);
+  return {d,score,reasons};
+}
+function runFinder(){
+  const prefs={county:$('finderCounty').value,pay:+$('finderPay').value,fitness:$('finderFitness').value,verified:$('finderVerified').value,veteran:$('finderVeteran').checked,workout:$('finderWorkout').checked};
+  let matches=DEPARTMENTS.map(d=>matchDepartment(d,prefs));
+  if(prefs.verified==='verified') matches=matches.filter(x=>x.d.status==='verified');
+  if(prefs.workout) matches=matches.filter(x=>x.d.fitnessVerified);
+  matches.sort((a,b)=>b.score-a.score||a.d.name.localeCompare(b.d.name));
+  const top=matches.slice(0,8);
+  $('finderResults').innerHTML=top.length?`<article class="notice"><b>How matching works</b><p>Results rank public-source coverage and your selected preferences. They do not predict hiring success or declare one agency objectively better.</p></article>`+top.map((x,i)=>`<article class="match-card"><div class="match-rank">${i+1}</div><div class="match-body"><div class="match-title"><div><span class="kicker">${esc(x.d.county)} COUNTY</span><h2>${esc(x.d.name)}</h2></div><span class="match-score">${x.score} match points</span></div><div class="profile-meter"><span style="width:${profileCompleteness(x.d)}%"></span></div><small>${profileCompleteness(x.d)}% of comparison fields summarized</small><p>${x.reasons.length?esc(x.reasons.join(' • ')):'Official agency link available'}</p><div class="item-actions"><button class="primary" onclick="openDepartment(${x.d.id})">View profile</button>${x.d.fitnessVerified?`<button class="secondary" onclick="trainForDepartment(${x.d.id})">Build workout</button>`:''}</div></div></article>`).join(''):'<article class="mission empty-state">No departments currently match every selected filter. Turn off “agency-specific workout must be available” or include official-link-only profiles.</article>';
+}
+if($('runFinder')) $('runFinder').addEventListener('click',runFinder);
+finderCounties();
+
+// Upgrade comparison to include evidence, coverage, and a neutral best-fit summary.
+if($('compareBtn')) $('compareBtn').onclick=()=>{
+  if(compareIds.length!==2)return;
+  const [a,b]=compareIds.map(id=>DEPARTMENTS.find(x=>x.id===id));
+  const rows=[
+    ['Profile coverage',`${profileCompleteness(a)}%`,`${profileCompleteness(b)}%`],
+    ['City',a.city,b.city],['County',a.county,b.county],['Minimum age',a.minimumAge,b.minimumAge],
+    ['Education',a.education,b.education],['Starting salary',a.salary,b.salary],['Benefits',a.benefits,b.benefits],
+    ['Hiring process',a.hiringProcess,b.hiringProcess],['Fitness standards',a.fitness,b.fitness],
+    ['Agency workout',a.fitnessVerified?'Available':'Not yet verified',b.fitnessVerified?'Available':'Not yet verified'],
+    ['Veteran preference',a.veteranPreference,b.veteranPreference],['Last checked',a.verifiedDate||'Not summarized',b.verifiedDate||'Not summarized']
+  ];
+  const advantages=[];
+  if(profileCompleteness(a)>profileCompleteness(b)) advantages.push(`${a.city} currently has more summarized fields`);
+  if(profileCompleteness(b)>profileCompleteness(a)) advantages.push(`${b.city} currently has more summarized fields`);
+  if(a.fitnessVerified&&!b.fitnessVerified) advantages.push(`${a.city} has an agency-specific workout available`);
+  if(b.fitnessVerified&&!a.fitnessVerified) advantages.push(`${b.city} has an agency-specific workout available`);
+  const ap=numericSalary(a),bp=numericSalary(b);
+  if(ap&&bp&&ap!==bp) advantages.push(`${ap>bp?a.city:b.city} has the higher parsed published pay figure`);
+  $('modalContent').innerHTML=`<span class="kicker">SMART COMPARISON</span><h1>${esc(a.city)} vs. ${esc(b.city)}</h1><article class="comparison-summary"><b>Best-fit notes</b><p>${advantages.length?esc(advantages.join('. '))+'.':'The current verified fields do not support a clear evidence-based advantage. Review both official sources.'}</p></article><div class="compare-table"><div class="compare-head"><b>Category</b><b>${esc(a.name)}</b><b>${esc(b.name)}</b></div>${rows.map(r=>`<div><span>${esc(r[0])}</span><span>${esc(r[1])}</span><span>${esc(r[2])}</span></div>`).join('')}</div><div class="comparison-note">PoliceReady does not collect applications or sensitive information. Submit everything through the official external agency systems.</div><div class="modal-actions"><a class="secondary link-btn" href="${esc(a.applyUrl)}" target="_blank" rel="noopener">Official ${esc(a.city)} site ↗</a><a class="secondary link-btn" href="${esc(b.applyUrl)}" target="_blank" rel="noopener">Official ${esc(b.city)} site ↗</a></div>`;
+  $('modal').classList.remove('hidden');
+};
+
+// Add current-performance context to generated workouts without claiming a pass prediction.
+const originalGenerate=$('generateAgencyWorkout')?.onclick;
+if($('generateAgencyWorkout')) $('generateAgencyWorkout').onclick=()=>{
+  originalGenerate?.();
+  const result=$('workoutResult');
+  if(!result || result.classList.contains('hidden')) return;
+  const run=$('currentRun').value.trim(), push=$('currentPushups').value, sit=$('currentSitups').value, date=$('agencyTestDate').value;
+  const details=[];
+  if(run) details.push(`Current 1.5-mile time: ${run}`);
+  if(push) details.push(`Current push-ups: ${push}`);
+  if(sit) details.push(`Current sit-ups: ${sit}`);
+  if(date){const days=Math.ceil((new Date(date+'T00:00:00')-new Date())/864e5); if(days>=0) details.push(`${days} days until test`);}
+  if(details.length) result.insertAdjacentHTML('afterbegin',`<article class="readiness-strip"><b>Your starting point</b><p>${details.map(esc).join(' • ')}</p><small>These numbers personalize context only; PoliceReady does not predict whether you will pass.</small></article>`);
+};
